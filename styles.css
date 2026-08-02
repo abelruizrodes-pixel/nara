@@ -269,8 +269,9 @@ h1, h2, h3, .symphony-text {
   animation: langFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.navbar .lang-selector-container:hover .lang-dropdown {
-  display: flex;
+.navbar .lang-selector-container:hover .lang-dropdown,
+.navbar .lang-dropdown.show {
+  display: flex !important;
 }
 
 .navbar .lang-dropdown a {
@@ -1119,5 +1120,25 @@ select.input-cinematic {
   }
   .newsletter-form button {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .logo {
+    font-size: 1.15rem;
+  }
+  .logo span {
+    display: none; /* Ocultar el subtítulo en móviles pequeños para ganar espacio */
+  }
+  .navbar {
+    padding: 1rem 4%;
+  }
+  .navbar .btn-gold {
+    padding: 0.55rem 1rem !important;
+    font-size: 0.72rem !important;
+  }
+  .navbar .lang-selector-btn {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.72rem !important;
   }
 }

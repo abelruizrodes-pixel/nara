@@ -115,11 +115,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (langDropdown) {
+    if (langBtn) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+      });
+    }
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('show');
+    });
+
     langDropdown.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const selectedLang = link.getAttribute('data-lang');
         updateLanguage(selectedLang);
+        langDropdown.classList.remove('show');
       });
     });
   }
